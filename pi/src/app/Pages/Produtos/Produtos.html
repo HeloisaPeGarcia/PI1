@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <my-app></my-app>
     <header class="site-header">
         <div class="menu-icon" onclick="toggleMenu()"> 
             <span>&#9776; Menu</span>
         </div>
-        <h1 class="logo">AutoLux</h1>
+        <h1 class="logo" style="font-family: Anton SC, sans-serif;">Drivernext</h1>
         <nav class="header-nav hidden">
             <a href="../s" class="nav-item">Home</a>
             <a href="./app/Pages/Cadastro/Cadastro.html" class="nav-item">Registro</a>
@@ -28,10 +29,7 @@
       <!-- Carrossel de Imagens -->
 <div class="carousel">
     <div class="carousel-images" id="carousel-images">
-        <img src="https://www.motortrend.com/uploads/sites/10/2023/11/2024-audi-rs-3-4wd-sedan-angular-front.png?w=768&width=768&q=75&format=webp" alt="Frente" class="carousel-image">
-        <img src="https://file.kelleybluebookimages.com/kbb/base/evox/CP/51527/2023-Audi-RS%206-back.png" alt="Costas" class="carousel-image">
-        <img src="https://file.kelleybluebookimages.com/kbb/base/evox/CP/51527/2023-Audi-RS%206-side.png" alt="Lado" class="carousel-image">
-        <img src="https://file.kelleybluebookimages.com/kbb/base/evox/CP/51527/2023-Audi-RS%206-interior.png" alt="Interior" class="carousel-image">
+        <img src="./images/black.jfif" alt="Frente" class="carousel-image">
     </div>
     <button class="carousel-button prev" onclick="prevImage()">&#10094;</button>
     <button class="carousel-button next" onclick="nextImage()">&#10095;</button>
@@ -63,13 +61,13 @@
         const carImage = document.getElementById('car-image');
         switch (color) {
             case 'vermelho':
-                carImage.src = 'https://www.motortrend.com/uploads/sites/10/2023/11/2024-audi-rs-3-4wd-sedan-angular-front.png?w=768&width=768&q=75&format=webp';
+                carImage.src = './images/red.jfif';
                 break;
             case 'azul':
-                carImage.src = 'https://file.kelleybluebookimages.com/kbb/base/evox/CP/51527/2023-Audi-RS%206-front_51527_032_1799x727_6I6I_cropped.png';
+                carImage.src = './images/blue.jfif';
                 break;
             case 'preto':
-                carImage.src = 'https://images.dealer.com/ddc/vehicles/2023/Audi/RS%206%20Avant/Wagon/perspective/front-left/2023_24.png';
+                carImage.src = './images/black.jfif';
                 break;
             default:
                 carImage.src = 'https://production.autoforce.com/uploads/version/profile_image/10792/model_main_webp_comprar-tfsi-quattro-tiptronic_5b40684966.png.webp';
@@ -90,22 +88,19 @@
     let currentImageIndex = 0;
 let images = {
     vermelho: [
-        'carro-exemplo-vermelho-frente.jpg',
-        'carro-exemplo-vermelho-costas.jpg',
-        'carro-exemplo-vermelho-lado.jpg',
-        'carro-exemplo-vermelho-interior.jpg'
+        './images/red.jfif',
+        './images/red_back.jfif',
+        './images/color_red.png',
     ],
     azul: [
-        'carro-exemplo-azul-frente.jpg',
-        'carro-exemplo-azul-costas.jpg',
-        'carro-exemplo-azul-lado.jpg',
-        'carro-exemplo-azul-interior.jpg'
+        './images/blue.jfif',
+        './images/blue_back.jfif',
+        './images/blue.jpg',
     ],
     preto: [
-        'https://rng-t.com/wp-content/uploads/2023/06/1-1.png',
-        'https://classe.hr/sites/3000/upload/listings/1612628086_19back.png',
-        'https://www.webmotors.com.br/imagens/prod/379539/AUDI_RS6_4.0_V8_TFSI_MHEV_AVANT_PERFORMANCE_TIPTRONIC_37953915092091021.webp?s=fill&w=440&h=330&q=80&t=true',
-        'carro-exemplo-preto-interior.jpg'
+        './images/black.jfif',
+        './images/black_back.jfif',
+        './images/color_black.png',
     ]
 };
 

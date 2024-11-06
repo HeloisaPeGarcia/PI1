@@ -1,4 +1,4 @@
-/* Reset */
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -6,9 +6,9 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
+    font-family: 'Roboto', Arial, sans-serif; /* Fonte mais sofisticada */
+    background-color: #f4f4f4;  /* Cor de fundo mais neutra */
+    color: #333;  /* Texto escuro para bom contraste */
 }
 
 /* Header */
@@ -16,112 +16,141 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 20px;
+    padding: 15px 30px;
     background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .site-header .menu-icon {
     cursor: pointer;
+    font-size: 24px;
 }
 
 .site-header .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: #222; /* Tom escuro para o logo */
 }
 
 .header-nav {
     display: flex;
-    gap: 20px;
+    gap: 30px;
 }
 
 .nav-item {
     color: #333;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .nav-item:hover {
-    color: #555;
+    color: #e60012; /* Vermelho Audi */
 }
 
 /* Products Section */
 .products-section {
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    margin: 40px auto;
+    padding: 30px;
     text-align: center;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .products-section h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-weight: 900;
+    color: #222;
 }
 
+/* Product Customization */
 .product-customization {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    margin-top: 30px;
 }
 
 /* Car Image */
 .product-image {
-    max-width: 500px;
     width: 100%;
+    max-width: 500px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out;
+}
+
+.product-image:hover {
+    transform: scale(1.05);
 }
 
 /* Customization Options */
 .customization-options {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
 }
 
 .color-options, .wheel-options {
     background-color: #fff;
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 200px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    transition: box-shadow 0.3s ease;
 }
 
 .color-options h3, .wheel-options h3 {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #333;
+}
+
+.color-options:hover, .wheel-options:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
 
 /* Buttons */
 button {
+    
     display: block;
     width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    font-size: 1rem;
-    color: #333;
-    background-color: #e9e9e9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    padding: 12px;
+    margin-top: 15px;
+    font-size: 1.2rem;
+    color: #202020;
+    background-color: #ffffff; /* Vermelho Audi */
+    border: 1px solid #202020;
+    border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
-    background-color: #ccc;
+    transform: scale(1.05);
 }
+
+/* Carousel */
 .carousel {
     position: relative;
-    width: 100%;
-    max-width: 600px;
-    margin: auto;
+    width: 110%;
+    max-width: 700px;
+    margin: 50px auto;
 }
 
 .carousel-images {
+    border: 1px solid #202020;
     display: flex;
     overflow: hidden;
     width: 100%;
+    height: 100%;
 }
 
 .carousel-image {
@@ -136,22 +165,21 @@ button:hover {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
-    font-size: 12px;
-    padding: 6px;
+    font-size: 16px;
+    padding: 10px;
     cursor: pointer;
     border-radius: 50%;
-    width: 24px;
-    height: 24px;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .prev {
-    left: 5px; /* Ajuste para posicionar ao lado esquerdo da imagem */
+    left: 20px;
 }
 
 .next {
-    right: 5px; /* Ajuste para posicionar ao lado direito da imagem */
+    right: 20px;
 }
-
