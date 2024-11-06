@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venda de Carros Esportivos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="menu-icon" onclick="toggleMenu()">
+            <span>&#9776; Menu</span>
+        </div>
+        <h1 class="logo">AutoLux</h1>
+        <nav class="header-nav hidden">
+            <a href="./app/Pages/Contato/Contato.html" class="nav-item">Contato</a>
+            <a href="./app/Pages/Produtos/Produtos.html" class="nav-item">Produtos</a>
+            <a href="./app/Pages/Login/Login.html" class="nav-item">Login</a>
+        </nav>
+    </header>
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('.header-nav');
+            nav.classList.toggle('hidden');
+        }
+        </script>
+         
+
+    <!-- Seção Principal -->
+    <section class="main-section">
+        <div class="car-info">
+            <img src="https://images-porsche.imgix.net/-/media/1DBDC37E82084CF496EE48FCCE48BE0A_4D115F6379CF4C299F1F38641CE865F0_911-gt3-side?w=1400&q=85&crop=faces%2Centropy%2Cedges&auto=format" alt="Carro Esportivo" class="car-image"> <!-- Substitua pelo caminho da imagem do carro -->
+            <div class="model-options">
+                <span>Estilo</span>
+                <span>Performance</span>
+            </div>
+            <h2 class="car-model">Modelo XYZ</h2>
+            <button class="change-model-button">Mudar de modelo</button>
+        </div>
+    </section>
+</body>
+</html>

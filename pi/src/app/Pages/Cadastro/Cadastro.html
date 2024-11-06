@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoLux - Registro</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link para o CSS principal -->
+</head>
+<body>
+
+<header class="site-header">
+    <div class="menu-icon" onclick="toggleMenu()"> 
+        <span>&#9776; Menu</span>
+    </div>
+    <h1 class="logo">AutoLux</h1>
+</header>
+
+<div class="register-container">
+    <h2>Registro</h2>
+    <form action="#" method="POST">
+        <label for="name">Nome Completo</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Senha</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="confirm-password">Confirmar Senha</label>
+        <input type="password" id="confirm-password" name="confirm-password" required>
+
+        <button type="submit" class="register-button">Registrar</button>
+    </form>
+    <p>Já possui uma conta? <a href="login.html">Faça login</a></p>
+</div>
+
+<script>// script para verificar senha
+    document.querySelector('form').addEventListener('submit', function(event) {
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirm-password').value;
+    
+        if (password !== confirmPassword) {
+            event.preventDefault(); // Impede o envio do formulário
+            alert("As senhas não coincidem!");
+        }
+    });
+    </script> <!-- Script para o menu -->
+</body>
+</html>

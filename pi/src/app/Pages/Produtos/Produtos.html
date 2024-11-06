@@ -1,0 +1,152 @@
+<!-- products.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoLux - Produtos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="menu-icon" onclick="toggleMenu()"> 
+            <span>&#9776; Menu</span>
+        </div>
+        <h1 class="logo">AutoLux</h1>
+        <nav class="header-nav hidden">
+            <a href="../s" class="nav-item">Home</a>
+            <a href="./app/Pages/Cadastro/Cadastro.html" class="nav-item">Registro</a>
+            <a href="./app/Pages/Contato/Contato.html" class="nav-item">Contato</a>
+            <a href="#blog" class="nav-item">Blog</a>
+        </nav>
+    </header>
+
+<!-- products.html -->
+<section class="products-section">
+    <h2>Personalize seu Audi R6</h2>
+    <div class="product-customization">
+      <!-- Carrossel de Imagens -->
+<div class="carousel">
+    <div class="carousel-images" id="carousel-images">
+        <img src="https://www.motortrend.com/uploads/sites/10/2023/11/2024-audi-rs-3-4wd-sedan-angular-front.png?w=768&width=768&q=75&format=webp" alt="Frente" class="carousel-image">
+        <img src="https://file.kelleybluebookimages.com/kbb/base/evox/CP/51527/2023-Audi-RS%206-back.png" alt="Costas" class="carousel-image">
+        <img src="https://file.kelleybluebookimages.com/kbb/base/evox/CP/51527/2023-Audi-RS%206-side.png" alt="Lado" class="carousel-image">
+        <img src="https://file.kelleybluebookimages.com/kbb/base/evox/CP/51527/2023-Audi-RS%206-interior.png" alt="Interior" class="carousel-image">
+    </div>
+    <button class="carousel-button prev" onclick="prevImage()">&#10094;</button>
+    <button class="carousel-button next" onclick="nextImage()">&#10095;</button>
+</div>
+
+        <div class="customization-options">
+            <!-- Opções de Cor -->
+            <div class="color-options">
+                <h3>Cor</h3>
+                <button onclick="changeColor('vermelho')">Vermelho</button>
+                <button onclick="changeColor('azul')">Azul</button>
+                <button onclick="changeColor('preto')">Preto</button>
+            </div>
+            
+            <!-- Opções de Aro -->
+            <div class="wheel-options">
+                <h3>Aro</h3>
+                <button onclick="changeWheel('aro18')">Aro 18</button>
+                <button onclick="changeWheel('aro19')">Aro 19</button>
+                <button onclick="changeWheel('aro20')">Aro 20</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script>
+    function changeColor(color) {
+        const carImage = document.getElementById('car-image');
+        switch (color) {
+            case 'vermelho':
+                carImage.src = 'https://www.motortrend.com/uploads/sites/10/2023/11/2024-audi-rs-3-4wd-sedan-angular-front.png?w=768&width=768&q=75&format=webp';
+                break;
+            case 'azul':
+                carImage.src = 'https://file.kelleybluebookimages.com/kbb/base/evox/CP/51527/2023-Audi-RS%206-front_51527_032_1799x727_6I6I_cropped.png';
+                break;
+            case 'preto':
+                carImage.src = 'https://images.dealer.com/ddc/vehicles/2023/Audi/RS%206%20Avant/Wagon/perspective/front-left/2023_24.png';
+                break;
+            default:
+                carImage.src = 'https://production.autoforce.com/uploads/version/profile_image/10792/model_main_webp_comprar-tfsi-quattro-tiptronic_5b40684966.png.webp';
+        }
+    }
+
+    function changeWheel(wheelSize) {
+        const carImage = document.getElementById('car-image');
+        // Supondo que tenhamos imagens para cada combinação de cor e aro
+        if (carImage.src.includes('vermelho')) {
+            carImage.src = `carro-exemplo-vermelho-${wheelSize}.jpg`;
+        } else if (carImage.src.includes('azul')) {
+            carImage.src = `carro-exemplo-azul-${wheelSize}.jpg`;
+        } else if (carImage.src.includes('preto')) {
+            carImage.src = `carro-exemplo-preto-${wheelSize}.jpg`;
+        }
+    }
+    let currentImageIndex = 0;
+let images = {
+    vermelho: [
+        'carro-exemplo-vermelho-frente.jpg',
+        'carro-exemplo-vermelho-costas.jpg',
+        'carro-exemplo-vermelho-lado.jpg',
+        'carro-exemplo-vermelho-interior.jpg'
+    ],
+    azul: [
+        'carro-exemplo-azul-frente.jpg',
+        'carro-exemplo-azul-costas.jpg',
+        'carro-exemplo-azul-lado.jpg',
+        'carro-exemplo-azul-interior.jpg'
+    ],
+    preto: [
+        'https://rng-t.com/wp-content/uploads/2023/06/1-1.png',
+        'https://classe.hr/sites/3000/upload/listings/1612628086_19back.png',
+        'https://www.webmotors.com.br/imagens/prod/379539/AUDI_RS6_4.0_V8_TFSI_MHEV_AVANT_PERFORMANCE_TIPTRONIC_37953915092091021.webp?s=fill&w=440&h=330&q=80&t=true',
+        'carro-exemplo-preto-interior.jpg'
+    ]
+};
+
+function updateCarouselImages(color) {
+    const carouselImages = document.getElementById('carousel-images');
+    carouselImages.innerHTML = '';
+    images[color].forEach(src => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.classList.add('carousel-image');
+        carouselImages.appendChild(img);
+    });
+    currentImageIndex = 0;
+    showImage(0);
+}
+
+function showImage(index) {
+    const carouselImages = document.querySelectorAll('.carousel-image');
+    carouselImages.forEach((img, i) => {
+        img.style.transform = `translateX(-${index * 100}%)`;
+    });
+}
+
+function nextImage() {
+    const totalImages = document.querySelectorAll('.carousel-image').length;
+    currentImageIndex = (currentImageIndex + 1) % totalImages;
+    showImage(currentImageIndex);
+}
+
+function prevImage() {
+    const totalImages = document.querySelectorAll('.carousel-image').length;
+    currentImageIndex = (currentImageIndex - 1 + totalImages) % totalImages;
+    showImage(currentImageIndex);
+}
+
+// Atualize a função changeColor para chamar updateCarouselImages
+function changeColor(color) {
+    updateCarouselImages(color);
+}
+
+</script>
+
+</body>
+</html>

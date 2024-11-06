@@ -1,0 +1,39 @@
+/* Estilo da seção de contato */
+.contact-section {
+    padding: 2rem;
+    max-width: 600px;
+    margin: auto;
+    background-color: #f7f7f7;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.contact-section h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.contact-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-section input, .contact-section textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.submit-button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #333;
+}

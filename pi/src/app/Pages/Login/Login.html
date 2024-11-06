@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - AutoLux</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="login-container">
+    <h2 class="login-title">Bem-vindo à AutoLux</h2>
+    <p class="login-subtitle">Faça login para continuar</p>
+    
+    <form class="login-form">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" class="login-input" placeholder="Digite seu e-mail" required>
+        
+        <label for="password">Senha</label>
+        <input type="password" id="password" class="login-input" placeholder="Digite sua senha" required>
+        
+        <button type="submit" class="login-button">Entrar</button>
+    </form>
+
+    <p class="login-footer">Não tem uma conta? <a href="../Register/Register.html">Cadastre-se</a></p>
+</div>
+
+<script>
+    // script.js
+document.querySelector('.login-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    if (email === '' || password === '') {
+        alert('Por favor, preencha todos os campos.');
+        return;
+    }
+
+    // Você pode adicionar mais validações ou enviar os dados ao servidor aqui.
+    alert('Login realizado com sucesso!');
+});
+
+</script>
+</body>
+</html>
